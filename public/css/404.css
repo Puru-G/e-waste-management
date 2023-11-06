@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #060606;
 }
 .error{
     text-align: center;
@@ -20,5 +20,5 @@
     text-transform: capitalize;
 }
 .sub-line a{
-    color: #fff;
+    color: #232424;
 }
