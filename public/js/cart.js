@@ -12,7 +12,7 @@ const createSmallCards = (data) => {
             <p class="item-count">${data.item}</p>
             <button class="counter-btn increment">+</button>
         </div>
-        <p class="sm-price" data-price="${data.price}">$${data.price * data.item}</p>
+        <p class="sm-price" data-price="${data.price}">₹${data.price * data.item}</p>
         <button class="sm-delete-btn"><img src="img/close.png" alt=""></button>
     </div>
     `
@@ -40,7 +40,7 @@ const setCartProducts = () => {
 const updateBill = () => {
     updateNavCartCounter();
     let billPrice = document.querySelector('.bill');
-    billPrice.innerHTML = `$${totalBill}`;
+    billPrice.innerHTML = `₹${totalBill}`;
 }
 
 const setupCardEvents = () => {
@@ -61,7 +61,7 @@ const setupCardEvents = () => {
                 item.innerHTML--;
                 totalBill -= cost;
                 updateBill();
-                price[i].innerHTML = `$${item.innerHTML * cost}`;
+                price[i].innerHTML = `₹${item.innerHTML * cost}`;
                 product[i].item = item.innerHTML;
                 localStorage.setItem('cart', JSON.stringify(product));
             }
@@ -71,7 +71,7 @@ const setupCardEvents = () => {
                 item.innerHTML++;
                 totalBill += cost;
                 updateBill();
-                price[i].innerHTML = `$${item.innerHTML * cost}`;
+                price[i].innerHTML = `₹${item.innerHTML * cost}`;
                 product[i].item = item.innerHTML;
                 localStorage.setItem('cart', JSON.stringify(product));
             }
