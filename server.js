@@ -362,7 +362,7 @@ app.post('/stripe-checkout', async(req,res)=>{
 
 
 app.get('/success',async(req,res)=>{
-    let {order,session_id}=req.query;
+    let {session_id, order}=req.query;
     try{
         const session = await stripeGateway.checkout.sessions.retrieve(session_id);
         const customer = await stripeGateway.customers.retrieve(session.customer);
@@ -376,7 +376,7 @@ app.get('/success',async(req,res)=>{
             res.redirect('/checkout?payment=done')
         })*/
     }catch{
-        //res.redirect("/404");
+        // res.redirect("/404");
     }
 })
 
