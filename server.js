@@ -274,6 +274,7 @@ app.get('/search/:key',(req,res)=>{
     res.sendFile("search.html",{root:"public"})
 })
 
+
 app.post('/add-review',(req,res)=>{
     let {headline,review,rate,email,product}=req.body;
     if(!headline.length || !review.length || rate == 0 || email == null || !product){
@@ -396,6 +397,6 @@ app.use((req,res)=>{
 
 
 
-app.listen(5500,()=>{
-    console.log('Server is running on port 5500')
+app.listen(5501,()=>{
+    console.log('Server is running on port 5501')
 })

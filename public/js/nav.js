@@ -22,10 +22,10 @@ const createNavbar = () =>{
     navbar.innerHTML += `
     
     <ul class="links-container">
-    <li class="link-item"><a href="#" class="link active">home</a></li>
-        <li class="link-item"><a href="#" class="link">product</a></li>
-        <li class="link-item"><a href="#" class="link">about</a></li>
-        <li class="link-item"><a href="#" class="link">contact</a></li>
+    <li class="link-item"><a href="index.html" class="link active">home</a></li>
+        
+        <li class="link-item"><a href="about.html" class="link">about</a></li>
+        <li class="link-item"><a href="contact.html" class="link">contact</a></li>
     </ul>
     <div class="user-interactions">
         <div class="search-box">
