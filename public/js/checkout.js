@@ -9,7 +9,7 @@ window.onload = ()=>{
     }
     if(location.search.includes('payment_fail=true')){
         
-        showFormError("some error occured. please try again");
+        showFormError("some error occured. payment fail , please try again");
     }
 }
 
@@ -19,7 +19,7 @@ placeOrderBtn.addEventListener('click',()=>{
     let address = getAddress();
     
     if(address.address.length){
-        fetch('/stripe-checkout',{
+        fetch('/stipe-checkout',{
             method:'post',
             headers: new Headers({'Content-Type':'application/json'}),
             body: JSON.stringify({

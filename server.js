@@ -336,7 +336,7 @@ app.get('/checkout',(req,res)=>{
 let stripeGateway = stripe(process.env.stripe_key);
 let DOMAIN = process.env.DOMAIN;
 
-app.post('/stripe-checkout', async(req,res)=>{
+app.post('/stipe-checkout', async(req,res)=>{
     const session = await stripeGateway.checkout.sessions.create({
         payment_method_types: ["card"],
         mode:"payment",
@@ -368,7 +368,7 @@ app.get('/success',async(req,res)=>{
         const session = await stripeGateway.checkout.sessions.retrieve(session_id);
         const customer = await stripeGateway.customers.retrieve(session.customer);
 
-        console.log(customer);
+       // console.log(customer);
         /*let date = new Date();
         let orders_collection = collection(db,"orders");
         let docName = `${customer.email}-order-${date.getTime()}`;
@@ -378,6 +378,7 @@ app.get('/success',async(req,res)=>{
         })*/
     }catch{
         // res.redirect("/404");
+        res.redirect("/checkout?payment=done");
     }
 })
 
