@@ -15,7 +15,7 @@ const setData = (data) => {
     productImage.src = data.image;
     shortDes.innerHTML = data.shortDes;
     detail.innerHTML = data.detail;
-    price.innerHTML = `$${data.price}`;
+    price.innerHTML = `₹${data.price}`;
 
     cartBtn.addEventListener('click', () => {
         cartBtn.innerHTML = add_product_to_cart(data);
