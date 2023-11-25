@@ -1,6 +1,11 @@
 body{
     padding: 100px 0;
+    background: radial-gradient(#fff,#9ced88);
 }
+
+/*background{
+    color:#ff3737
+}*/
 
 .loader{
     position: fixed;
@@ -92,6 +97,16 @@ body{
 .product-detail{
     width: 60%;
     max-width: 60%;
+    
+}
+.product-title{
+    background-color: white;
+}
+.product-des{
+    background-color: white;
+}
+.price{
+    background-color: white;
 }
 
 .disable{
@@ -119,6 +134,7 @@ body{
     height: 500px;
     overflow: scroll;
     white-space: pre-wrap;
+    background-color:  white;
 }
 
 .tags-section{
@@ -139,7 +155,7 @@ body{
     height: 300px;
     margin: 20px 0;
     font-family: 'lato', sans-serif;
-
+    background-color: white;
 }
 
 .btn-wrapper{
@@ -153,11 +169,13 @@ body{
     border: none;
     outline: none;
     color: #fff;
-    background:#d5b38b;
+    background:rgb(230, 141, 9);
     cursor: pointer;
     margin-right: 20px;
+    border-radius: 5px;
 }
 
 .draft-btn{
-    background: #cacaca;
+    background-color: black;
+    border-radius: 5px;
 }
