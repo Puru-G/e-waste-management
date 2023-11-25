@@ -15,10 +15,11 @@ body{
 .seller-img{
     width: 60%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
 }
 
 .form{
+    background:whitesmoke;
     width: 40%;
     padding: 20px;
     display: flex;
