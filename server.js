@@ -94,6 +94,30 @@ app.post('/signup',(req,res)=>{
         })
     }
 })
+
+//contact route
+
+app.post('/contact',(req,res)=>{
+    let {name, email, textarea} = req.body;
+    if(name.length<1){
+        return res.json({'alert': 'Please enter your Name'})
+    }
+    else if(!email.length){
+        return res.json({'alert': 'Please enter your Email'})
+    }
+    else if(!textarea.length){
+        return res.json({'alert': 'Please enter your Messege'})
+    }else{
+        const contact = collection(db,"contact");
+        
+        setDoc(doc(contact,email),req.body).then(data =>{
+            res.json('textarea')
+        })
+    
+    }
+})
+
+//login route
 app.get('/login',(req,res)=>{
     res.sendFile('login.html', { root: 'public' });
 })

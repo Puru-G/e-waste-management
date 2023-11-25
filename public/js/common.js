@@ -40,6 +40,10 @@ const processData = (data)=>{
         alert('got the review');
         location.reload();
     }
+    else if(data == 'textarea'){
+        alert('got the messege');
+        location.reload();
+    }
 }
 
 

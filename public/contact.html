@@ -15,7 +15,10 @@
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body style=" background: radial-gradient(#fff,#9ced88);">
-
+    <!-- <img src="../img/loading.gif" class="loader" alt=""> -->
+    <div class="error">
+        <p>some error occured</p>
+    </div>
     <div class="header">
         <div class="container">
             <div class="navbar dark">
@@ -40,11 +43,11 @@
                     <form action="" method="post">
                         <br>
                         <label for="cname">Enter Your Name: </label>
-                        <input type="text" name="name" id="cname" placeholder="Enter Name" required>
+                        <input type="text" name="cname" id="cname" placeholder="Enter Name" required>
                         <label for="cemail" >Enter Your Email-Id: </label>
-                        <input type="email" name="email" id="cemail" placeholder="xyz123@gmail.com" required>
+                        <input type="email" name="cemail" id="cemail" placeholder="xyz123@gmail.com" required>
                         <label for="ctextarea">Enter Your Messege: </label>
-                        <textarea name="" id="" cols="30" rows="6" placeholder="Type the messege" style="width: 100%;"></textarea>
+                        <textarea name="ctextarea" id="ctextarea" cols="30" rows="6" placeholder="Type the messege" style="width: 100%;"></textarea>
                         <button class="btn" type="submit">Submit</button>
                     </form>
                 </div>
@@ -55,7 +58,7 @@
 
     
     
-    <script>
+    <!-- <script>
         var MenuItems=document.getElementById("MenuItems");
         MenuItems.style.maxHeight = "0px";
         function menutoggle()
@@ -69,8 +72,10 @@
             }
         }
     
-    </script>
+    </script> -->
     <script src="js/nav.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
