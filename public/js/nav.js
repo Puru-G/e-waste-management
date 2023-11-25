@@ -26,6 +26,7 @@ const createNavbar = () =>{
         
         <li class="link-item"><a href="about.html" class="link">about</a></li>
         <li class="link-item"><a href="contact.html" class="link">contact</a></li>
+        <li class="link-item"><a href='/get-all-products' class="link">products</a></li>
     </ul>
     <div class="user-interactions">
         <div class="search-box">

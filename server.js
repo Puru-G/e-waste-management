@@ -241,6 +241,35 @@ app.post('/seller',(req,res)=>{
 
 })
 
+//get all products
+app.get('/get-all-products',(req,res)=>{
+    res.sendFile("all-products.html",{root:'public'})
+})
+
+app.post('/get-all-products',(req,res)=>{
+    // let {email,id,tag} = req.body
+    let products = collection(db,"products");
+    let docRef;
+    
+    docRef = getDocs(query(products))
+    
+
+    docRef.then(products =>{
+        if(products.empty){
+            return res.json('no products');
+        }
+        let productArr = []
+        
+        products.forEach(item =>{
+            let data = item.data();
+            data.id = item.id;
+            productArr.push(data);
+        })
+    
+        
+        res.json(productArr);
+    })
+})
 
 
 app.post('/get-products',(req,res)=>{
