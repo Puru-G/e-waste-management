@@ -96,7 +96,9 @@ app.post('/signup',(req,res)=>{
 })
 
 //contact route
-
+app.get('/contact',(req,res)=>{
+    res.sendFile('contact.html', { root: 'public' })
+})
 app.post('/contact',(req,res)=>{
     let {name, email, textarea} = req.body;
     if(name.length<1){
@@ -111,7 +113,11 @@ app.post('/contact',(req,res)=>{
         const contact = collection(db,"contact");
         
         setDoc(doc(contact,email),req.body).then(data =>{
-            res.json('textarea')
+            res.json({
+                name:req.body.name,
+                email:req.body.email,
+                textarea:req.body.textarea,
+            })
         })
     
     }

@@ -17,6 +17,9 @@ formBtn.addEventListener('click',()=>{
     let password = document.querySelector('#password');
     let number = document.querySelector('#number') || null;
     let tac = document.querySelector('#tc') || null;
+    
+
+    
 
     if(fullname != null)  //sign up page conditions
     {
@@ -49,6 +52,7 @@ formBtn.addEventListener('click',()=>{
         })
     }
     }
+    
     else{
        if(!email.value.length || !password.value.length)
        {

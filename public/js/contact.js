@@ -1,3 +1,4 @@
+
 let formBtn = document.querySelector('.btn');
 let loader = document.querySelector('.loader');
 formBtn.addEventListener('click', ()=>{
@@ -16,6 +17,7 @@ formBtn.addEventListener('click', ()=>{
     }
     else{
         // loader.style.display = 'block';
+        console.log("hvbeuaeuhsjhE");
         sendData('/contact',{
             name: name.value,
             email: email.value,

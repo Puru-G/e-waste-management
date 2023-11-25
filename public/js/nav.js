@@ -84,7 +84,7 @@ const logout = ()=>{
 const loginm = ()=>{
     location.href='/login';
 }
-console.log(`${user.seller}`);
+//console.log(`${user.seller}`);
 if(!user.seller){
     
     let forSeller = document.querySelector(".for-seller");
