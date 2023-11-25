@@ -47,6 +47,10 @@ const createNavbar = () =>{
             <img src="../img/seller-icon-removebg-preview.png" class="seller-icon" alt="">
             
         </div>
+        <div class="for-seller">
+            
+            <button class="for-search-btn"></button>
+        </div>
     </div>
 
 `
@@ -79,7 +83,24 @@ const logout = ()=>{
 const loginm = ()=>{
     location.href='/login';
 }
-
+console.log(`${user.seller}`);
+if(!user.seller){
+    
+    let forSeller = document.querySelector(".for-seller");
+    forSeller.innerHTML = 'seller';
+    forSeller.addEventListener('click',() => transferseller());
+}
+else{
+    let forSeller = document.querySelector(".for-seller");
+    forSeller.innerHTML = 'dashboard';
+    forSeller.addEventListener('click',() => transferdashboard());
+}
+const transferseller = ()=>{
+    location.href='/seller';
+}
+const transferdashboard =()=>{
+    location.href='/dashboard';
+}
 let searchBtn = document.querySelector('.search-btn')
 let searchBox = document.querySelector('.search');
 
