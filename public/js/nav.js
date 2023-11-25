@@ -43,6 +43,10 @@ const createNavbar = () =>{
                 <a>login</a>
             </div>
         </div>
+        <div class="seller" onclick="location.href = '/seller'">
+            <img src="../img/seller-icon.jpg" class="seller-icon" alt="">
+            
+        </div>
     </div>
 
 `
