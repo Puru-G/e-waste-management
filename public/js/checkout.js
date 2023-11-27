@@ -6,6 +6,7 @@ window.onload = ()=>{
         let items = [];
         localStorage.setItem('cart',JSON.stringify(items));
         showFormError("order is placed");
+        
     }
     if(location.search.includes('payment_fail=true')){
         

@@ -404,7 +404,7 @@ app.post('/stipe-checkout', async(req,res)=>{
     const session = await stripeGateway.checkout.sessions.create({
         payment_method_types: ["card"],
         mode:"payment",
-        success_url:`${DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}&order=${JSON.stringify(req.body)}`,
+        success_url:`${DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}&orders=${JSON.stringify(req.body)}`,
         cancel_url:`${DOMAIN}/checkout?payment_fail=true`,
         customer_creation:'always',
         line_items: req.body.items.map(item =>{
@@ -429,10 +429,11 @@ app.post('/stipe-checkout', async(req,res)=>{
 
 
 app.get('/success',async(req,res)=>{
-    let {session_id, order}=req.query;
+    let {session_id, orders}=req.query;
 
     try{
-        console.log(order);
+        let order = orders+'"}]}';
+        // console.log(order);
         const session = await stripeGateway.checkout.sessions.retrieve(session_id);
         const customer = await stripeGateway.customers.retrieve(session.customer);
 
