@@ -44,10 +44,7 @@ const createNavbar = () =>{
                 <a>login</a>
             </div>
         </div>
-        <div class="seller" onclick="location.href = '/seller'">
-            <img src="../img/seller-icon-removebg-preview.png" class="seller-icon" alt="">
-            
-        </div>
+        
         <div class="for-seller">
             
             <button class="for-search-btn"></button>
