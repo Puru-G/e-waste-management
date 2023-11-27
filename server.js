@@ -395,12 +395,18 @@ app.get('/checkout',(req,res)=>{
 let stripeGateway = stripe(process.env.stripe_key);
 let DOMAIN = process.env.DOMAIN;
 
+
 app.post('/stipe-checkout', async(req,res)=>{
+    // const customer = await stripeGateway.customers.create({
+    //     email: 'puru@gmail.com',
+    //     name: 'puru',
+    //   });
     const session = await stripeGateway.checkout.sessions.create({
         payment_method_types: ["card"],
         mode:"payment",
         success_url:`${DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}&order=${JSON.stringify(req.body)}`,
         cancel_url:`${DOMAIN}/checkout?payment_fail=true`,
+        customer_creation:'always',
         line_items: req.body.items.map(item =>{
             return{
                 price_data:{
@@ -413,6 +419,7 @@ app.post('/stipe-checkout', async(req,res)=>{
                     unit_amount:item.price * 100
                 },
                 quantity:item.item
+                
             }
         })
     })
@@ -423,24 +430,26 @@ app.post('/stipe-checkout', async(req,res)=>{
 
 app.get('/success',async(req,res)=>{
     let {session_id, order}=req.query;
+
     try{
+        console.log(order);
         const session = await stripeGateway.checkout.sessions.retrieve(session_id);
         const customer = await stripeGateway.customers.retrieve(session.customer);
 
        // console.log(customer);
-        /*let date = new Date();
-        let orders_collection = collection(db,"orders");
+        let date = new Date();
+        let orders_collection = collection(db,"orders-detail");
         let docName = `${customer.email}-order-${date.getTime()}`;
         setDoc(doc(orders_collection,docName),JSON.parse(order))
         .then(data =>{
             res.redirect('/checkout?payment=done')
-        })*/
-    }catch{
-        // res.redirect("/404");
-        res.redirect("/checkout?payment=done");
+        })
+    }catch(err){
+        res.redirect("/404");
+        console.log(err);
+        // res.redirect("/checkout?payment=done");
     }
 })
-
 
 
 
