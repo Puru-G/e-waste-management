@@ -22,8 +22,8 @@ const firebase = initializeApp(firebaseConfig);
 const db = getFirestore();
 const app=express();
 
-app.use(express.static("public"));  //now the html file gets its css file
-app.use(express.json())            //this is use for form sharing
+app.use(express.static("public"));  
+app.use(express.json())            
 
 
 
@@ -41,7 +41,7 @@ app.use(express.json())            //this is use for form sharing
 import "dotenv/config";
 
 app.get('/',(req,res)=>{
-    res.sendFile("index.html",{root : "public"})  //here we give the starting html file and the folder name
+    res.sendFile("index.html",{root : "public"}) 
 })
 
 //signup route
