@@ -53,5 +53,3 @@ This project aims to create an e-commerce platform for buying and selling electr
 - Use HTTPS for production deployment.
 - Regularly update dependencies.
 
-
-##Testing someting
